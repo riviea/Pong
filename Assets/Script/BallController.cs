@@ -11,13 +11,20 @@ public class BallController : MonoBehaviour
     void Start()
     {
         Debug.Log(gameObject.transform.forward.ToString());
-        dirVec = gameObject.transform.right;
+        int x = Random.Range(0, 2) == 0 ? -1 : 1;
+        int y = Random.Range(0, 2) == 0 ? -1 : 1;
+        dirVec = new Vector2(x, y); //gameObject.transform.right;
     }
 
     // Update is called once per frame
     void Update()
     {
         gameObject.transform.position += (new Vector3(dirVec.x, dirVec.y) * speed) * Time.deltaTime;
+    }
+
+    Vector3 ReflectVector(Vector3 pos)
+    {
+        return new Vector3(pos.x, pos.y, pos.z);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

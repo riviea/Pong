@@ -19,7 +19,7 @@ public class BallController : MonoBehaviour
     {
 
     }
-    
+
     void Launch()
     {
         int x = Random.Range(0, 2) == 0 ? -1 : 1;
@@ -38,7 +38,12 @@ public class BallController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            Debug.Log("Touch");
+            //Debug.Log("OnCollisionEnter2D-BallController");
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Debug.Log("OnTriggerEnter2D-BallController");
     }
 }

@@ -23,7 +23,7 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Touch Ball");
+        //Debug.Log("OnTriggerEnter2D-Goal");
         if (collision.gameObject.name.Equals("Ball"))
         {
             if (isPlayer1Goal)
@@ -39,6 +39,6 @@ public class Goal : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        //Debug.Log("OnCollisionEnter2D-Goal");
     }
 }
